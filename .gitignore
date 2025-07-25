@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+env/
+*.sqlite3
+*.db
+
+# SQLite (твой файл)
+reviews.db
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Docker
+*.tar
+*.pid
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MyPy / coverage / testing
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Env manager
+.uv/
