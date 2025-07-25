@@ -29,17 +29,70 @@ docker-compose up --build
 ```
 
 # 🧪 Тестирование API
-<a href='http://localhost:8000/docs' style='color: #000; text-decoration: none;'>Swagger UI</a> 👉 http://localhost:8000/docs
-<a href='http://localhost:8000/redoc' style='color: #000; text-decoration: none;'>ReDoc</a> 👉 http://localhost:8000/redoc
+<p>Swagger UI 👉 http://localhost:8000/docs</p>
+<p>ReDoc 👉 http://localhost:8000/redoc</p>
 
-# 📬 Примеры запросов
-POST запрос
+## 📬 Примеры запросов
+
+### ➕ Добавить отзыв (POST)
+
 ```bash
 curl -X POST http://localhost:8000/reviews \
      -H "Content-Type: application/json" \
      -d '{"text": "Обожаю этот продукт!"}'
 ```
-Ответ
+
+### Пример ответа
+
+```json
+{
+  "id": 1,
+  "text": "Обожаю этот продукт!",
+  "sentiment": "positive",
+  "created_at": "2025-07-25T14:12:00.123456+00:00"
+}
+```
+
+### 📋 Получить все отзывы (GET)
+
+```bash
+curl http://localhost:8000/reviews
+```
+
+### Пример ответа:
+
+```json
+[
+  {
+    "id": 1,
+    "text": "Обожаю этот продукт!",
+    "sentiment": "positive",
+    "created_at": "2025-07-25T14:12:00.123456+00:00"
+  },
+  {
+    "id": 2,
+    "text": "Плохо работает сервис",
+    "sentiment": "negative",
+    "created_at": "2025-07-25T14:15:00.654321+00:00"
+  }
+]
+```
+
+### 📉 Получить только негативные отзывы (GET)
+
 ```bash
 curl "http://localhost:8000/reviews?sentiment=negative"
+```
+
+### Пример ответа:
+
+```json
+[
+  {
+    "id": 2,
+    "text": "Плохо работает сервис",
+    "sentiment": "negative",
+    "created_at": "2025-07-25T14:15:00.654321+00:00"
+  }
+]
 ```
