@@ -11,7 +11,7 @@
 ### 1. Клонируй проект
 
 ```bash
-git clone https://github.com/your-username/review-sentiment-service.git
+git clone https://github.com/Albert-Sadykov/Review_sentiment_service.git
 cd review-sentiment-service
 ```
 
